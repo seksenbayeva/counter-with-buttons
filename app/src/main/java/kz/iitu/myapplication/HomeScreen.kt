@@ -20,6 +20,7 @@ import kz.iitu.myapplication.HomeContract.UiAction
 import kz.iitu.myapplication.HomeContract.UiState
 import kotlinx.coroutines.flow.Flow
 import kz.iitu.myapplication.mvi.CollectSideEffect
+import kz.iitu.myapplication.mvi.unpack
 
 @Composable
 fun HomeScreen() {
@@ -72,6 +73,9 @@ fun HomeScreen(
                 }
                 Button(onClick = { onAction(UiAction.OnDecreaseCountClick) }) {
                     Text("Decrease")
+                }
+                Button(onClick = { onAction(UiAction.OnResetCountClick) }) {
+                    Text("Reset")
                 }
             }
         }

@@ -14,6 +14,7 @@ class HomeViewModel : ViewModel(), MVI<UiState, UiAction, SideEffect> by mvi(ini
         when (uiAction) {
             UiAction.OnIncreaseCountClick -> increaseCount()
             UiAction.OnDecreaseCountClick -> onDecreaseCountClick()
+            UiAction.OnResetCountClick -> resetCount()
         }
     }
 
@@ -27,6 +28,9 @@ class HomeViewModel : ViewModel(), MVI<UiState, UiAction, SideEffect> by mvi(ini
         } else {
             viewModelScope.emitSideEffect(SideEffect.ShowCountCanNotBeNegativeToast)
         }
+    }
+    private fun resetCount() {
+        updateUiState { copy(count = 0) }
     }
 }
 

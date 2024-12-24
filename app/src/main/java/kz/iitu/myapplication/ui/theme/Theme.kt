@@ -10,6 +10,9 @@ import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
+import androidx.compose.material3.Typography
+
+val typography = Typography()
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
@@ -43,7 +46,7 @@ fun MVITheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = kotlin.text.Typography,
+        typography = typography,
         content = content,
     )
 }

@@ -6,6 +6,7 @@ interface HomeContract {
     sealed interface UiAction {
         object OnIncreaseCountClick : UiAction
         object OnDecreaseCountClick : UiAction
+        object OnResetCountClick : UiAction
     }
 
     sealed interface SideEffect {
